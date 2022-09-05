@@ -1,3 +1,15 @@
+let canvas = document.querySelector('#canvas1');
+let canvasDrawingSurface = canvas.getContext('2d');
+
+window.addEventListener('resize',resizeCanvas, false);
+function resizeCanvas () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+
+
+
 initGame();
 
 function initGame() {
