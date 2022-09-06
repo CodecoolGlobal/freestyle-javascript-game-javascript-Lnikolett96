@@ -94,7 +94,7 @@ to {background-position: -12900px 0;}
   position: absolute;
   left:0;
   top: 180px;
-  animation: Down3;
+  animation: Down4;
   animation-duration: 0.5s;
 }
 @keyframes Down1 {
@@ -126,42 +126,42 @@ to {background-position: -12900px 0;}
   100% {top: 560px; left: 0px}
 }
 @keyframes Down8 {
-  0% {top: 560px;px; left:0px;}
+  0% {top: 560px; left:0px;}
   100% {top: 640px; left: 0px}
 }
 
 
 
 
-@keyframes Up1 {
+@keyframes Up8 {
   0% {top: 640px; left:0px;}
   100% {top: 560px; left: 0px}
 }
-@keyframes Up2 {
+@keyframes Up7 {
   0% {top:560px; left:0px;}
   100% {top: 480px; left: 0px}
 }
-@keyframes Up3 {
+@keyframes Up6 {
   0% {top: 480px; left:0px;}
   100% {top: 400px; left: 0px}
 }
-@keyframes Up4 {
+@keyframes Up5 {
   0% {top:260px; left:0px;}
   100% {top: 180px; left: 0px}
 }
-@keyframes Up5 {
+@keyframes Up4 {
   0% {top:320px; left:0px;}
   100% {top: 240px; left: 0px}
 }
-@keyframes Up6 {
+@keyframes Up3 {
   0% {top:240px; left:0px;}
   100% {top: 160px; left: 0px}
 }
-@keyframes Up7 {
+@keyframes Up2 {
   0% {top:160px; left:0px;}
   100% {top: 80px; left: 0px}
 }
-@keyframes Up8 {
+@keyframes Up1 {
   0% {top:80px; left:0px;}
   100% {top: 0px; left: 0px}
 }

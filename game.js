@@ -1,8 +1,15 @@
 let catPosition = 1;
+
 function init() {
+
     window.addEventListener("keydown", (event) => {
         if (event.defaultPrevented) {
             return; // Do nothing if the event was already processed
+        }
+        if (catPosition <= 1) {
+            catPosition = 1;
+        } else if (catPosition >= 8) {
+            catPosition = 8;
         }
         console.log(event.key)
         if (event.key === "ArrowDown") {
@@ -46,5 +53,6 @@ function makeCandies() {
         theParent.removeChild(candiesDiv);
     }, 7500)
 }
+
 init()
-setInterval(makeCandies,2000);
+setInterval(makeCandies, 2000);
