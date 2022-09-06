@@ -24,7 +24,6 @@ function init() {
         }
     })
     setInterval(makeCandies,2000);
-
 }
 
 function makeCandies() {
@@ -52,6 +51,4 @@ function makeCandies() {
 function takeCandy () {
     
 }
-
 init()
-setInterval(makeCandies, 2000);
