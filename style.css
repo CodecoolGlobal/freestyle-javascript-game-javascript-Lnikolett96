@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+body, html {padding: 0; margin: 0; width: 100%; height: 100%; }
+h1 {
+  margin:0; 
+  padding: 0; 
+  font-size: 94px; 
+  text-align: center; 
+  font-family: 'Bangers', cursive; 
+  color: #f28f25;
+  text-shadow: 2px 2px 5px #000;
+  cursor: default;
+/*   background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+h3 {
+  margin:0; 
+  padding: 0; 
+  text-align: center; 
+  color: #fff; 
+  text-shadow: 2px 2px 5px #000; 
+  font-family: 'Amatic SC', cursive; 
+  font-size: 56px; 
+}
+
+h3:hover { 
+  text-shadow: 0px 0px 15px #2588f2;
+  -webkit-animation: breathe 2s linear infinite;
+  animation: breathe 2s linear infinite; 
+  cursor:pointer;
+}
+
+a {color: #fff; text-decoration: none;}
+
+#banner {
+  padding: 12% 0 0;
+  margin: 0 auto;
+  width: 40%;
+  min-width: 388px;
+}
+
+#horizontal-scroll {
+width: 100%;  
+height: 100%;  
+background: url(background1.jpg);
+background-size: cover;
+-webkit-animation: backgroundScroll 25s linear infinite;
+animation: backgroundScroll 25s linear infinite;  
+background-color: #9db9da; 
+}
+
+#horizontal-scroll2 {
+width: 100%;  
+height: 100%;  
+background: url(background1.jpg);
+background-size: cover;
+-webkit-animation: backgroundScroll 25s linear infinite;
+animation: backgroundScroll 25s linear infinite;  
+}
+
+#horizontal-scroll3 {
+width: 100%;  
+height: 100%;  
+background: url(background1.jpg); 
+background-size: cover; 
+-webkit-animation: backgroundScroll 25s linear infinite;
+animation: backgroundScroll 25s linear infinite; 
+}
+
+@-webkit-keyframes backgroundScroll {
+from {background-position: 0 0;}  
+to {background-position: -12900px 0;}  
+}
+@keyframes backgroundScroll {
+from {background-position: 0 0;}  
+to {background-position: -12900px 0;}  
+}
+
+@-webkit-keyframes breathe {
+0% {text-shadow: 0px 0px 15px #2588f2}  
+50% {text-shadow: 0px 0px 5px #2588f2} 
+100% {text-shadow: 0px 0px 25px #2588f2}  
+}
+@keyframes breathe {
+0% {text-shadow: 0px 0px 15px #000}  
+50% {text-shadow: 0px 0px 5px #fff} 
+100% {text-shadow: 0px 0px 15px #000}
+}
+
+
+#moveNyan {
+  position: absolute;
+  left:0;
+  top: 180px;
+  animation: Down3;
+  animation-duration: 0.5s;
+}
+@keyframes Down1 {
+  0% {top:-60px; left:0px;}
+  100% {top: 20px; left: 0px}
+}
+@keyframes Down2 {
+  0% {top:20px; left:0px;}
+  100% {top: 100px; left: 0px}
+}
+@keyframes Down3 {
+  0% {top: 100px; left:0px;}
+  100% {top: 180px; left: 0px}
+}
+@keyframes Down4 {
+  0% {top:180px; left:0px;}
+  100% {top: 260px; left: 0px}
+}
+@keyframes Down5 {
+  0% {top:260px; left:0px;}
+  100% {top: 340px; left: 0px}
+}
+@keyframes Down6 {
+  0% {top:340px; left:0px;}
+  100% {top: 420px; left: 0px}
+}
+@keyframes Down7 {
+  0% {top:420px; left:0px;}
+  100% {top: 500px; left: 0px}
+}
+
+
+
+
+@keyframes Up1 {
+  0% {top: 500px; left:0px;}
+  100% {top: 420px; left: 0px}
+}
+@keyframes Up2 {
+  0% {top:420px; left:0px;}
+  100% {top: 340px; left: 0px}
+}
+@keyframes Up3 {
+  0% {top: 340px; left:0px;}
+  100% {top: 260px; left: 0px}
+}
+@keyframes Up4 {
+  0% {top:260px; left:0px;}
+  100% {top: 180px; left: 0px}
+}
+@keyframes Up5 {
+  0% {top:180px; left:0px;}
+  100% {top: 100px; left: 0px}
+}
+@keyframes Up6 {
+  0% {top:100px; left:0px;}
+  100% {top: 20px; left: 0px}
+}
+@keyframes Up7 {
+  0% {top:20px; left:0px;}
+  100% {top: -60px; left: 0px}
+}
+
