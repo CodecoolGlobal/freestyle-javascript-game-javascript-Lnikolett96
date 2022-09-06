@@ -91,10 +91,10 @@ to {background-position: -12900px 0;}
 
 
 #moveNyan {
-  position: fixed;
+  position: absolute;
   left:0;
-  top: 640px;
-  animation: Down1;
+  top: 180px;
+  animation: Down3;
   animation-duration: 0.5s;
 }
 @keyframes Down1 {
@@ -146,8 +146,8 @@ to {background-position: -12900px 0;}
   100% {top: 400px; left: 0px}
 }
 @keyframes Up4 {
-  0% {top:400px; left:0px;}
-  100% {top: 320px; left: 0px}
+  0% {top:260px; left:0px;}
+  100% {top: 180px; left: 0px}
 }
 @keyframes Up5 {
   0% {top:320px; left:0px;}
