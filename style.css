@@ -93,68 +93,152 @@ to {background-position: -12900px 0;}
 #moveNyan {
   position: absolute;
   left:0;
-  top: 180px;
-  animation: Down3;
+  top: 640px;
+  animation: Down1;
   animation-duration: 0.5s;
 }
 @keyframes Down1 {
-  0% {top:-60px; left:0px;}
-  100% {top: 20px; left: 0px}
+  0% {top:0px; left:0px;}
+  100% {top: 80px; left: 0px}
 }
 @keyframes Down2 {
-  0% {top:20px; left:0px;}
-  100% {top: 100px; left: 0px}
+  0% {top:80px; left:0px;}
+  100% {top: 160px; left: 0px}
 }
 @keyframes Down3 {
-  0% {top: 100px; left:0px;}
-  100% {top: 180px; left: 0px}
+  0% {top: 160px; left:0px;}
+  100% {top: 240px; left: 0px}
 }
 @keyframes Down4 {
-  0% {top:180px; left:0px;}
-  100% {top: 260px; left: 0px}
+  0% {top:240px; left:0px;}
+  100% {top: 320px; left: 0px}
 }
 @keyframes Down5 {
-  0% {top:260px; left:0px;}
-  100% {top: 340px; left: 0px}
+  0% {top:320px; left:0px;}
+  100% {top: 400px; left: 0px}
 }
 @keyframes Down6 {
-  0% {top:340px; left:0px;}
-  100% {top: 420px; left: 0px}
+  0% {top:400px; left:0px;}
+  100% {top: 480px; left: 0px}
 }
 @keyframes Down7 {
-  0% {top:420px; left:0px;}
-  100% {top: 500px; left: 0px}
+  0% {top:480px; left:0px;}
+  100% {top: 560px; left: 0px}
+}
+@keyframes Down8 {
+  0% {top: 560px;px; left:0px;}
+  100% {top: 640px; left: 0px}
 }
 
 
 
 
 @keyframes Up1 {
-  0% {top: 500px; left:0px;}
-  100% {top: 420px; left: 0px}
+  0% {top: 640px; left:0px;}
+  100% {top: 560px; left: 0px}
 }
 @keyframes Up2 {
-  0% {top:420px; left:0px;}
-  100% {top: 340px; left: 0px}
+  0% {top:560px; left:0px;}
+  100% {top: 480px; left: 0px}
 }
 @keyframes Up3 {
-  0% {top: 340px; left:0px;}
-  100% {top: 260px; left: 0px}
+  0% {top: 480px; left:0px;}
+  100% {top: 400px; left: 0px}
 }
 @keyframes Up4 {
-  0% {top:260px; left:0px;}
-  100% {top: 180px; left: 0px}
+  0% {top:400px; left:0px;}
+  100% {top: 320px; left: 0px}
 }
 @keyframes Up5 {
-  0% {top:180px; left:0px;}
-  100% {top: 100px; left: 0px}
+  0% {top:320px; left:0px;}
+  100% {top: 240px; left: 0px}
 }
 @keyframes Up6 {
-  0% {top:100px; left:0px;}
-  100% {top: 20px; left: 0px}
+  0% {top:240px; left:0px;}
+  100% {top: 160px; left: 0px}
 }
 @keyframes Up7 {
-  0% {top:20px; left:0px;}
-  100% {top: -60px; left: 0px}
+  0% {top:160px; left:0px;}
+  100% {top: 80px; left: 0px}
+}
+@keyframes Up8 {
+  0% {top:80px; left:0px;}
+  100% {top: 0px; left: 0px}
 }
 
+
+.candies {
+  position: absolute;
+  right: -80px;
+  top: 0px;
+  animation: candy1;
+  animation-duration: 5s;
+}
+
+.candies2 {
+  position: absolute;
+  right: -80px;
+  top: 80px;
+  animation: candy1;
+  animation-duration: 5s;
+}
+
+.candies3 {
+  position: absolute;
+  right: -80px;
+  top: 160px;
+  animation: candy1;
+  animation-duration: 5s;
+}
+
+.candies4 {
+  position: absolute;
+  right: -80px;
+  top: 240px;
+  animation: candy1;
+  animation-duration: 5s;
+}
+
+.candies5 {
+  position: absolute;
+  right: -80px;
+  top: 320px;
+  animation: candy1;
+  animation-duration: 5s;
+}
+
+.candies6 {
+  position: absolute;
+  right: -80px;
+  top: 400px;
+  animation: candy1;
+  animation-duration: 5s;
+}
+
+.candies7 {
+  position: absolute;
+  right: -80px;
+  top: 480px;
+  animation: candy1;
+  animation-duration: 5s;
+}
+.candies8 {
+  position: absolute;
+  right: -80px;
+  top: 560px;
+  animation: candy1;
+  animation-duration: 5s;
+}
+.candies9 {
+  position: absolute;
+  right: -80px;
+  top: 640px;
+  animation: candy1;
+  animation-duration: 5s;
+}
+
+
+@keyframes candy1 {
+  0% {right: -80px;}
+  100% {right: 1000px}
+}
