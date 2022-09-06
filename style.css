@@ -91,7 +91,7 @@ to {background-position: -12900px 0;}
 
 
 #moveNyan {
-  position: absolute;
+  position: fixed;
   left:0;
   top: 640px;
   animation: Down1;
@@ -199,6 +199,8 @@ to {background-position: -12900px 0;}
   animation-duration: 5s;
 }
 
+
+
 .candies5 {
   position: absolute;
   right: -80px;
@@ -206,6 +208,7 @@ to {background-position: -12900px 0;}
   animation: candy1;
   animation-duration: 5s;
 }
+
 
 .candies6 {
   position: absolute;
@@ -222,6 +225,7 @@ to {background-position: -12900px 0;}
   animation: candy1;
   animation-duration: 5s;
 }
+
 .candies8 {
   position: absolute;
   right: -80px;
@@ -229,6 +233,7 @@ to {background-position: -12900px 0;}
   animation: candy1;
   animation-duration: 5s;
 }
+
 .candies9 {
   position: absolute;
   right: -80px;
@@ -238,7 +243,9 @@ to {background-position: -12900px 0;}
 }
 
 
+
+
 @keyframes candy1 {
   0% {right: -80px;}
-  100% {right: 1000px}
+  100% {right: 2000px}
 }

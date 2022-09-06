@@ -4,19 +4,30 @@ const candies = ['asset/cake.png', 'asset/cookie.png', 'asset/cotton-candy.png',
 const classForCandies = ['candies', 'candies2', 'candies3', 'candies4', 'candies5', 'candies6', 'candies7', 'candies8', 'candies9'];
 let theParent = document.querySelector('#cmove');
 
-
-while (setTimeout(10)) {
-
+function makeCandies() {
     let randomInt = parseInt(Math.floor(Math.random() * 10));
+    let randomCandy = parseInt(Math.floor(Math.random() * 5));
 
     let candiesDiv = document.createElement('div');
-    let candiesElement = document.createElement('img');
-
     candiesDiv.classList.add(classForCandies[randomInt]);
-    candiesElement.src = candies[randomInt];
+
+    let candiesElement = document.createElement('img');
+    candiesElement.src = candies[randomCandy];
+    candiesElement.style.height = '70px';
+
     candiesDiv.appendChild(candiesElement);
     theParent.appendChild(candiesDiv);
 
+    setTimeout(() => {
+        theParent.removeChild(candiesDiv);
+    }, 5500)
 }
+setInterval(makeCandies,2000);
+
+
+
+
+
+
 
 
