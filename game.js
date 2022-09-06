@@ -1,6 +1,15 @@
 let catPosition = 1;
+
 function init() {
     window.addEventListener("keydown", (event) => {
+        if (catPosition < 1) {
+
+            catPosition = 1;
+        }
+        else if (catPosition > 8) {
+
+            catPosition = 8;
+        }
         if (event.defaultPrevented) {
             return; // Do nothing if the event was already processed
         }
@@ -47,7 +56,6 @@ function makeCandies() {
         theParent.removeChild(candiesDiv);
     }, 7500)
 }
-
 function takeCandy () {
     
 }
