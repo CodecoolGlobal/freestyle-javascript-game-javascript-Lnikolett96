@@ -10,6 +10,7 @@ function init() {
             moveCat.style.animation = "Down" + catPosition;
             moveCat.style.animationFillMode = "forwards";
             moveCat.style.animationDuration = "0.5s";
+
             catPosition++;
             console.log(catPosition)
         }
@@ -29,7 +30,7 @@ function makeCandies() {
     const candies = ['asset/cake.png', 'asset/cookie.png', 'asset/cotton-candy.png', 'asset/ice-cream.png', 'asset/lollipop.png'];
     const classForCandies = ['candies', 'candies2', 'candies3', 'candies4', 'candies5', 'candies6', 'candies7', 'candies8', 'candies9'];
     let theParent = document.querySelector('#cmove');
-    let randomInt = parseInt(Math.floor(Math.random() * 10));
+    let randomInt = parseInt(Math.floor(Math.random() * 9));
     let randomCandy = parseInt(Math.floor(Math.random() * 5));
 
     let candiesDiv = document.createElement('div');
@@ -43,7 +44,7 @@ function makeCandies() {
 
     setTimeout(() => {
         theParent.removeChild(candiesDiv);
-    }, 5500)
+    }, 7500)
 }
 init()
 setInterval(makeCandies,2000);
