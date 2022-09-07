@@ -17,7 +17,7 @@ function init() {
             moveCat.style.animation = "Down" + catPosition;
             moveCat.style.animationFillMode = "forwards";
             moveCat.style.animationDuration = "0.5s";
-
+            // transition: width 2s, height 4s;
             catPosition++;
             console.log(catPosition)
         }
@@ -34,7 +34,7 @@ function init() {
 }
 
 function makeCandies() {
-    const candies = ['asset/cake.png', 'asset/cookie.png', 'asset/cotton-candy.png', 'asset/ice-cream.png', 'asset/lollipop.png'];
+    const candies = ['/static/asset/cake.png', '/static/asset/cookie.png', '/static/asset/cotton-candy.png', '/static/asset/ice-cream.png', '/static/asset/lollipop.png'];
     const classForCandies = ['candies', 'candies2', 'candies3', 'candies4', 'candies5', 'candies6', 'candies7', 'candies8', 'candies9'];
     let theParent = document.querySelector('#cmove');
     let randomInt = parseInt(Math.floor(Math.random() * 9));
@@ -56,3 +56,7 @@ function makeCandies() {
 
 init()
 setInterval(makeCandies, 2000);
+
+
+
+
