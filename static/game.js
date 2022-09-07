@@ -1,15 +1,19 @@
 let catPosition = 1;
+let point = 0;
+
 
 function init() {
-
     window.addEventListener("keydown", (event) => {
+        if (catPosition < 1) {
+
+            catPosition = 1;
+        }
+        else if (catPosition > 8) {
+
+            catPosition = 8;
+        }
         if (event.defaultPrevented) {
             return; // Do nothing if the event was already processed
-        }
-        if (catPosition <= 1) {
-            catPosition = 1;
-        } else if (catPosition >= 8) {
-            catPosition = 8;
         }
         console.log(event.key)
         if (event.key === "ArrowDown") {
@@ -17,7 +21,7 @@ function init() {
             moveCat.style.animation = "Down" + catPosition;
             moveCat.style.animationFillMode = "forwards";
             moveCat.style.animationDuration = "0.5s";
-            // transition: width 2s, height 4s;
+
             catPosition++;
             console.log(catPosition)
         }
@@ -30,12 +34,13 @@ function init() {
             console.log(catPosition)
         }
     })
-
+    setInterval(makeCandies,2000);
 }
 
 function makeCandies() {
     const candies = ['/static/asset/cake.png', '/static/asset/cookie.png', '/static/asset/cotton-candy.png', '/static/asset/ice-cream.png', '/static/asset/lollipop.png'];
     const classForCandies = ['candies', 'candies2', 'candies3', 'candies4', 'candies5', 'candies6', 'candies7', 'candies8', 'candies9'];
+
     let theParent = document.querySelector('#cmove');
     let randomInt = parseInt(Math.floor(Math.random() * 9));
     let randomCandy = parseInt(Math.floor(Math.random() * 5));
@@ -53,10 +58,8 @@ function makeCandies() {
         theParent.removeChild(candiesDiv);
     }, 7500)
 }
+function takeCandy () {
 
+
+}
 init()
-setInterval(makeCandies, 2000);
-
-
-
-
