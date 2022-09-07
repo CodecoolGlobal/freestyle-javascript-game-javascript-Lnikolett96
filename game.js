@@ -1,12 +1,19 @@
 let catPosition = 1;
+let startButton = document.getElementById('start')
+document.getElementById('banner').style.display = "none";
+startButton.addEventListener('click', function (){
+        document.getElementById('banner').style.display = "";
+        document.getElementById('menu').style.display = "none";
+        init()
+})
 
 function init() {
     window.addEventListener("keydown", (event) => {
-        if (catPosition < 1) {
+        if (catPosition < 2) {
 
             catPosition = 1;
         }
-        else if (catPosition > 8) {
+        else if (catPosition > 7) {
 
             catPosition = 8;
         }
@@ -17,6 +24,7 @@ function init() {
         if (event.key === "ArrowDown") {
             let moveCat = document.querySelector("#moveNyan");
             moveCat.style.animation = "Down" + catPosition;
+            console.log(moveCat.style.animation)
             moveCat.style.animationFillMode = "forwards";
             moveCat.style.animationDuration = "0.5s";
 
@@ -26,6 +34,7 @@ function init() {
         if (event.key === "ArrowUp") {
             let moveCat = document.querySelector("#moveNyan");
             moveCat.style.animation = "Up" + catPosition;
+            console.log(moveCat.style.animation)
             moveCat.style.animationFillMode = "forwards";
             moveCat.style.animationDuration = "0.5s";
             catPosition--;
@@ -59,4 +68,3 @@ function makeCandies() {
 function takeCandy () {
     
 }
-init()

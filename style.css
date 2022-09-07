@@ -4,7 +4,7 @@
 body, html {padding: 0; margin: 0; width: 100%; height: 100%; }
 h1 {
   margin:0; 
-  padding: 0; 
+  padding: 0; /home/tamas/Projects/WEB/week_4/syringe-python-WonkeTomi
   font-size: 94px; 
   text-align: center; 
   font-family: 'Bangers', cursive; 
@@ -94,7 +94,7 @@ to {background-position: -12900px 0;}
   position: absolute;
   left:0;
   top: 180px;
-  animation: Down4;
+  animation: 0;
   animation-duration: 0.5s;
 }
 @keyframes Down1 {
@@ -243,4 +243,108 @@ to {background-position: -12900px 0;}
 @keyframes candy1 {
   0% {right: 0px;}
   100% {right: 100%}
+}
+
+
+.menu {
+  text-align: center;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid;
+  box-shadow: 10px 15px #000000;
+  border-radius: 25%;
+  width: 40%;
+  position: absolute;
+  top: 10%;
+  left: 28%;
+  height: 70%;
+  padding: 30px;
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+}
+
+input[type="text"] {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+   border-radius: 20px;
+   border: 1px solid #2d9fd9;
+   box-shadow: 5px 10px #000000;
+   color: #a0d18c;
+   width: 300px;
+   height: 40px;
+   padding-left: 5px;
+   text-align: center;
+   line-height: 40px;
+    font-size: 28px;
+}
+
+input[type="text"]:focus {
+   outline: none;
+   border: 1px solid #a0d18c;
+   color: darkblue;
+   line-height: 40px;
+   font-family: Padauk;
+   font-size: 30px;
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 30px;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
 }
