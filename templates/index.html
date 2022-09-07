@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="game.js" defer></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="{{ url_for('static', filename='game.js' ) }}" defer></script>
     <title>ZsakbaTo(a)stCat</title>
 </head>
 <body>
 <div id="menu" class="menu">
     <div id="nyan">
-        <img height="250px"  src="asset/menunyan.png">
+        <img height="200px"  src="/static/asset/menunyan.png">
         <br>
-        <img width="500px"   src="asset/gametext2.png">
+        <img width="400px"   src="/static/asset/gametext2.png">
         <form>
             <input type="text" required placeholder="Enter your name">
             <br><br><br>
@@ -24,18 +24,18 @@
     </div>
 </div>
 <div id="horizontal-scroll">
-  <div id="horizontal-scroll2">
-    <div id="horizontal-scroll3">
-      <div id="banner">
-        <div id="cmove" style="display: block;" class="animated infinite pulse">
-          <div id="moveNyan">
-            <img height="100px" id="nyanCharacter" src="asset/nyan-cat-poptart-cat.gif">
-          </div>
+    <div id="horizontal-scroll2">
+        <div id="horizontal-scroll3">
+            <div id="banner">
+                <div id="cmove" style="display: block;" class="animated infinite pulse">
+                    <div id="moveNyan">
+                        <img height="70px" id="nyanCharacter" src="/static/asset/nyan-cat-poptart-cat.gif">
+                    </div>
+                </div>
+                <h3><a href="#"></a></h3>
+            </div>
         </div>
-        <h3><a href="#"></a></h3>
-      </div>
     </div>
-  </div>
 </div>
 </body>
 </html>
