@@ -166,16 +166,17 @@ to {background-position: -12900px 0;}
   100% {top: 0px; left: 0px}
 }
 
-
-.candies {
-  position: absolute;
-  right:0;
-  top: 0;
+.candy {
   animation: candy1;
   animation-duration: 5s;
 }
+.pos1 {
+  position: absolute;
+  right:0;
+  top: 0;
+}
 
-.candies2 {
+.pos2 {
   position: absolute;
   right:0;
   top: 80px;
@@ -183,7 +184,7 @@ to {background-position: -12900px 0;}
   animation-duration: 5s;
 }
 
-.candies3 {
+.pos3 {
   position: absolute;
   right: 0;
   top: 160px;
@@ -191,7 +192,7 @@ to {background-position: -12900px 0;}
   animation-duration: 5s;
 }
 
-.candies4 {
+.pos4 {
   position: absolute;
   right: 0;
   top: 240px;
@@ -200,7 +201,7 @@ to {background-position: -12900px 0;}
 }
 
 
-.candies5 {
+.pos5 {
   position: absolute;
   right: 0;
   top: 320px;
@@ -208,7 +209,7 @@ to {background-position: -12900px 0;}
   animation-duration: 5s;
 }
 
-.candies6 {
+.pos6 {
   position: absolute;
   right: 0;
   top: 400px;
@@ -216,7 +217,7 @@ to {background-position: -12900px 0;}
   animation-duration: 5s;
 }
 
-.candies7 {
+.pos7 {
   position: absolute;
   right: 0;
   top: 480px;
@@ -224,7 +225,7 @@ to {background-position: -12900px 0;}
   animation-duration: 5s;
 }
 
-.candies8 {
+.pos8 {
   position: absolute;
   right: 0;
   top: 560px;
@@ -232,7 +233,7 @@ to {background-position: -12900px 0;}
   animation-duration: 5s;
 }
 
-.candies9 {
+.pos9 {
   position: absolute;
   right: 0;
   top: 640px;
