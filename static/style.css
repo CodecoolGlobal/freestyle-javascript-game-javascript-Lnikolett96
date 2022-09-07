@@ -47,8 +47,8 @@ height: 100%;
 background: url(background1.jpg);
 background-size: cover;
 -webkit-animation: backgroundScroll 25s linear infinite;
-animation: backgroundScroll 25s linear infinite;
-background-color: #9db9da;
+animation: backgroundScroll 25s linear infinite;  
+background-color: #9db9da; 
 }
 
 #horizontal-scroll2 {
@@ -63,8 +63,8 @@ animation: backgroundScroll 25s linear infinite;
 #horizontal-scroll3 {
 width: 100%;  
 height: 100%;  
-background: url(background1.jpg); 
-background-size: cover;
+background: url(background1.jpg);
+background-size: cover; 
 -webkit-animation: backgroundScroll 25s linear infinite;
 animation: backgroundScroll 25s linear infinite; 
 }
@@ -92,8 +92,8 @@ to {background-position: -12900px 0;}
 
 #moveNyan {
   position: absolute;
-  left: 0;
-  top: 240px;
+  left:0;
+  top: 180px;
   animation: Down4;
   animation-duration: 0.5s;
 }
@@ -151,18 +151,18 @@ to {background-position: -12900px 0;}
 }
 @keyframes Up4 {
   0% {top:320px; left:0px;}
-  100% {top: 240px; left: 0px}
+  100% {top: 260px; left: 0px}
 }
 @keyframes Up3 {
-  0% {top:240px; left:0px;}
-  100% {top: 160px; left: 0px}
+  0% {top:260px; left:0px;}
+  100% {top: 180px; left: 0px}
 }
 @keyframes Up2 {
-  0% {top:160px; left:0px;}
-  100% {top: 80px; left: 0px}
+  0% {top:180px; left:0px;}
+  100% {top:100px; left: 0px}
 }
 @keyframes Up1 {
-  0% {top:80px; left:0px;}
+  0% {top:100px; left:0px;}
   100% {top: 0px; left: 0px}
 }
 
@@ -172,8 +172,7 @@ to {background-position: -12900px 0;}
   right:0;
   top: 0;
   animation: candy1;
-  animation-duration: 3s;
-  animation-timing-function: linear;
+  animation-duration: 5s;
 }
 
 .candies2 {
@@ -181,8 +180,7 @@ to {background-position: -12900px 0;}
   right:0;
   top: 80px;
   animation: candy1;
-  animation-duration: 3s;
-  animation-timing-function: linear;
+  animation-duration: 5s;
 }
 
 .candies3 {
@@ -190,8 +188,7 @@ to {background-position: -12900px 0;}
   right: 0;
   top: 160px;
   animation: candy1;
-  animation-duration: 3s;
-  animation-timing-function: linear;
+  animation-duration: 5s;
 }
 
 .candies4 {
@@ -199,8 +196,7 @@ to {background-position: -12900px 0;}
   right: 0;
   top: 240px;
   animation: candy1;
-  animation-duration: 3s;
-  animation-timing-function: linear;
+  animation-duration: 5s;
 }
 
 
@@ -209,8 +205,7 @@ to {background-position: -12900px 0;}
   right: 0;
   top: 320px;
   animation: candy1;
-  animation-duration: 3s;
-  animation-timing-function: linear;
+  animation-duration: 5s;
 }
 
 .candies6 {
@@ -218,8 +213,7 @@ to {background-position: -12900px 0;}
   right: 0;
   top: 400px;
   animation: candy1;
-  animation-duration: 3s;
-  animation-timing-function: linear;
+  animation-duration: 5s;
 }
 
 .candies7 {
@@ -227,8 +221,7 @@ to {background-position: -12900px 0;}
   right: 0;
   top: 480px;
   animation: candy1;
-  animation-duration: 3s;
-  animation-timing-function: linear;
+  animation-duration: 5s;
 }
 
 .candies8 {
@@ -236,8 +229,7 @@ to {background-position: -12900px 0;}
   right: 0;
   top: 560px;
   animation: candy1;
-  animation-duration: 3s;
-  animation-timing-function: linear;
+  animation-duration: 5s;
 }
 
 .candies9 {
@@ -245,8 +237,7 @@ to {background-position: -12900px 0;}
   right: 0;
   top: 640px;
   animation: candy1;
-  animation-duration: 3s;
-  animation-timing-function: linear;
+  animation-duration: 5s;
 }
 
 @keyframes candy1 {
