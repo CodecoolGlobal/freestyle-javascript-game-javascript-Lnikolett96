@@ -1,4 +1,6 @@
 let catPosition = 1;
+let point = 0;
+
 
 function init() {
     window.addEventListener("keydown", (event) => {
@@ -39,6 +41,7 @@ function makeCandies() {
 
     const candies = ['asset/cake.png', 'asset/cookie.png', 'asset/cotton-candy.png', 'asset/ice-cream.png', 'asset/lollipop.png'];
     const classForCandies = ['candies', 'candies2', 'candies3', 'candies4', 'candies5', 'candies6', 'candies7', 'candies8', 'candies9'];
+
     let theParent = document.querySelector('#cmove');
     let randomInt = parseInt(Math.floor(Math.random() * 9));
     let randomCandy = parseInt(Math.floor(Math.random() * 5));
@@ -57,6 +60,7 @@ function makeCandies() {
     }, 7500)
 }
 function takeCandy () {
+
     
 }
 init()
