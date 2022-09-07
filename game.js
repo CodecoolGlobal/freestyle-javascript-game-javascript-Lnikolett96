@@ -1,4 +1,4 @@
-let catPosition = 1;
+let catPosition = 4;
 let point = 0;
 
 const candies = ['asset/cake.png', 'asset/cookie.png', 'asset/cotton-candy.png', 'asset/ice-cream.png', 'asset/lollipop.png'];
@@ -7,14 +7,6 @@ const baddies = ['asset/angry-cat.png', 'asset/bag.png', 'asset/doom.png', 'asse
 
 function init() {
     window.addEventListener("keydown", (event) => {
-        if (catPosition < 1) {
-
-            catPosition = 1;
-        }
-        else if (catPosition > 8) {
-
-            catPosition = 8;
-        }
         if (event.defaultPrevented) {
             return; // Do nothing if the event was already processed
         }
@@ -24,25 +16,28 @@ function init() {
             moveCat.style.animation = "Down" + catPosition;
             moveCat.style.animationFillMode = "forwards";
             moveCat.style.animationDuration = "0.5s";
-
-            catPosition++;
-            console.log(catPosition)
+            if (catPosition >= 8) {
+            catPosition = 8;
+            }else{
+                catPosition++;
+            }
         }
         if (event.key === "ArrowUp") {
             let moveCat = document.querySelector("#moveNyan");
             moveCat.style.animation = "Up" + catPosition;
             moveCat.style.animationFillMode = "forwards";
             moveCat.style.animationDuration = "0.5s";
-            catPosition--;
-            console.log(catPosition)
+            if (catPosition <= 1) {
+            catPosition = 1;
+            }else{
+                catPosition--;
+            }
         }
     })
-    setInterval(makeAssumable, 1000, baddies);setInterval(makeAssumable,2000, candies);
+    setInterval(makeAssumable, 500, baddies);setInterval(makeAssumable,2000, candies);
 }
 
 function makeAssumable(searchList) {
-
-    const candies = ['asset/cake.png', 'asset/cookie.png', 'asset/cotton-candy.png', 'asset/ice-cream.png', 'asset/lollipop.png'];
     const classForCandies = ['candies', 'candies2', 'candies3', 'candies4', 'candies5', 'candies6', 'candies7', 'candies8', 'candies9'];
     let theParent = document.querySelector('#cmove');
     let randomInt = parseInt(Math.floor(Math.random() * 9));
