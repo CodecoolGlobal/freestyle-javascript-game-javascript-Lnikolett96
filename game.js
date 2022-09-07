@@ -1,4 +1,7 @@
 let catPosition = 1;
+const candies = ['asset/cake.png', 'asset/cookie.png', 'asset/cotton-candy.png', 'asset/ice-cream.png', 'asset/lollipop.png'];
+const baddies = ['asset/angry-cat.png', 'asset/bag.png', 'asset/doom.png', 'asset/poke.png', 'asset/poo.png', 'asset/predator.png', 'asset/blackhole.png', 'asset/water.png']
+
 
 function init() {
     window.addEventListener("keydown", (event) => {
@@ -32,21 +35,20 @@ function init() {
             console.log(catPosition)
         }
     })
-    setInterval(makeCandies,2000);
+    setInterval(makeAssumable, 1000, baddies);setInterval(makeAssumable,2000, candies);
 }
 
-function makeCandies() {
+function makeAssumable(searchList) {
 
-    const candies = ['asset/cake.png', 'asset/cookie.png', 'asset/cotton-candy.png', 'asset/ice-cream.png', 'asset/lollipop.png'];
     const classForCandies = ['candies', 'candies2', 'candies3', 'candies4', 'candies5', 'candies6', 'candies7', 'candies8', 'candies9'];
     let theParent = document.querySelector('#cmove');
     let randomInt = parseInt(Math.floor(Math.random() * 9));
-    let randomCandy = parseInt(Math.floor(Math.random() * 5));
+    let randomCandy = parseInt(Math.floor(Math.random() * searchList.length));
 
     let candiesDiv = document.createElement('div');
     candiesDiv.classList.add(classForCandies[randomInt]);
     let candiesElement = document.createElement('img');
-    candiesElement.src = candies[randomCandy];
+    candiesElement.src = searchList[randomCandy];
     candiesElement.style.height = '70px';
 
     candiesDiv.appendChild(candiesElement);
@@ -54,8 +56,10 @@ function makeCandies() {
 
     setTimeout(() => {
         theParent.removeChild(candiesDiv);
-    }, 7500)
+    }, 3000)
 }
+
+
 function takeCandy () {
     
 }
