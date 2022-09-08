@@ -16,12 +16,12 @@
         <img height="200px" src="/static/asset/menunyan.png">
         <br>
         <img width="500px"  src="/static/asset/gametext2.png">
-        <form method="post" action="{{url_for('index')}}">
+        <form id="user-name">
             <input type="text" id="player_name" name="player_name" required placeholder="Enter your name">
             <br><br><br>
             <button id="start" class="glow-on-hover" type="button">Start</button>
             <br><br><br>
-            <button type="button" class="glow-on-hover">High score</button>
+            <a href="{{url_for('high_score')}}"><button type="button" class="glow-on-hover">High score</button></a>
         </form>
     </div>
 </div>
@@ -30,14 +30,17 @@
         <h1>Game is over..</h1>
         <h3>Your Scores:</h3>
         <h3 id="playerData"></h3>
+        <form method="post" id="name-score" action="{{url_for('index')}}">
+            <button id="main-menu" name="main-menu" class="glow-on-hover">Main menu</button>
+        </form>
         <img src="/static/asset/sack.gif">
     </div>
 </div>
 <div id="horizontal-scroll">
     <div id="horizontal-scroll2">
         <div id="horizontal-scroll3">
-            <div>
-                <h3 id="score" style="color: #00ffd5" align="center">Your score: </h3>
+            <div id="score">
+                <h3 style="color: #00ffd5" align="center">Your score: </h3>
             </div>
             <div id="banner">
                 <div id="cmove" style="display: block;" class="animated infinite pulse">

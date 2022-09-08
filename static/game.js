@@ -9,13 +9,35 @@ const candies = ['/static/asset/cake.png', '/static/asset/cookie.png', '/static/
 const baddies = ['/static/asset/angry-cat.png', '/static/asset/bag.png', '/static/asset/doom.png', '/static/asset/poke.png', '/static/asset/poo.png', '/static/asset/predator.png', '/static/asset/blackhole.png', '/static/asset/water.png']
 const lifeAdding = ['/static/asset/add-life.png']
 let mySound = new Audio('/static/music.mp3')
-
 let startButton = document.getElementById('start')
+let gameOverHtml = document.getElementById('gameover')
+let userNameForm = document.getElementById('user-name')
+
+document.getElementById('score').style.display = 'none';
 document.getElementById('banner').style.display = "none";
+gameOverHtml.style.display = "none";
+
+userNameForm.addEventListener('submit', (event) => {
+    event.preventDefault()
+    let userName = userNameForm.elements['player_name']
+    console.log(userName.value)
+    fetch('/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            player_name: userName.value
+        })
+    })
+})
+
+
 startButton.addEventListener('click', function (){
         let playerNameinput = document.querySelector('#player_name')
         playerName = playerNameinput.value;
         document.getElementById('banner').style.display = "";
+        document.getElementById('score').style.display = "";
         document.getElementById('menu').style.display = "none";
         init()
 })
@@ -157,11 +179,13 @@ function takeLife() {
 function gameOver() {
     if (life === 0) {
         let gameOver = true;
-        let nyancat = document.querySelector('#moveNyan');
-        nyancat.remove();
-        let gameOverDiv = document.querySelector('#gameover')
-        gameOverDiv.classList.remove('hidden2')
+        document.getElementById('banner').style.display = "none"
+        gameOverHtml.style.display = "";
         let playerData = document.querySelector("#playerData");
         playerData.innerHTML = playerName + " : " + point;
+        document.getElementById('score').style.display = "none";
+
     }
 }
+
+        //fetch(`/')
