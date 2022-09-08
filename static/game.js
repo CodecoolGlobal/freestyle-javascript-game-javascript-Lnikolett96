@@ -1,5 +1,5 @@
 const classForPosition = ['pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'pos6', 'pos7', 'pos8', 'pos9'];
-let catPosition = 1;
+let catPosition = 4;
 let point = 0;
 
 let startButton = document.getElementById('start')
@@ -9,6 +9,9 @@ startButton.addEventListener('click', function (){
         document.getElementById('menu').style.display = "none";
         init()
 })
+const candies = ['/static/asset/cake.png', '/static/asset/cookie.png', '/static/asset/cotton-candy.png', '/static/asset/ice-cream.png', '/static/asset/lollipop.png'];
+const baddies = ['/static/asset/angry-cat.png', '/static/asset/bag.png', '/static/asset/doom.png', '/static/asset/poke.png', '/static/asset/poo.png', '/static/asset/predator.png', '/static/asset/blackhole.png', '/static/asset/water.png']
+
 
 function init() {
     window.addEventListener("keydown", (event) => {
@@ -41,8 +44,7 @@ function init() {
             console.log(catPosition)
         }
     })
-    setInterval(makeCandies,1000);
-    setInterval(takeCandy, 1000)
+    setInterval(makeAssumable, 500, baddies);setInterval(makeAssumable,2000, candies);setInterval(takeCandy, 1000)
 }
 
 function makeCandies() {
@@ -64,7 +66,7 @@ function makeCandies() {
 
     setTimeout(() => {
         theParent.removeChild(candiesDiv);
-    }, 7500)
+    }, 3000)
 }
 
 function takeCandy() {
@@ -75,8 +77,19 @@ function takeCandy() {
     let rectnyan = nyancat.getBoundingClientRect();
     for (let i = 0; i < activCandies.length; i++) {
         let oneCandyRect = activCandies[i].getBoundingClientRect();
-        if ((rectnyan.top - oneCandyRect.top) < 1 && (rectnyan.left - oneCandyRect.left) < 1)
+        if (rectnyan.x < oneCandyRect.x + oneCandyRect.width &&
+            rectnyan.x + rectnyan.width > oneCandyRect.x &&
+            rectnyan.y < oneCandyRect.y + oneCandyRect.height &&
+            rectnyan.y + rectnyan.height > oneCandyRect.y) {
+            console.log('belement')
             activCandies[i].remove()
             point += 20;
+
         }
+
+
+    }
 }
+
+
+//if (rectnyan.top === oneCandyRect.top && oneCandyRect.right === 1038)
