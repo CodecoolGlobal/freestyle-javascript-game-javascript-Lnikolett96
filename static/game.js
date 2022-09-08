@@ -7,8 +7,7 @@ let catMoveFixer = [catPosition]
 const candies = ['/static/asset/cake.png', '/static/asset/cookie.png', '/static/asset/cotton-candy.png', '/static/asset/ice-cream.png', '/static/asset/lollipop.png'];
 const baddies = ['/static/asset/angry-cat.png', '/static/asset/bag.png', '/static/asset/doom.png', '/static/asset/poke.png', '/static/asset/poo.png', '/static/asset/predator.png', '/static/asset/blackhole.png', '/static/asset/water.png']
 const lifeAdding = ['/static/asset/add-life.png']
-let mySound;
-mySound = new sound()
+let mySound = new Audio('/static/music.mp3')
 
 let startButton = document.getElementById('start')
 document.getElementById('banner').style.display = "none";
@@ -18,7 +17,9 @@ startButton.addEventListener('click', function (){
         init()
 })
 
+
 function init() {
+    mySound.play()
     window.addEventListener("keydown", (event) => {
         if (event.defaultPrevented) {
             return; // Do nothing if the event was already processed
