@@ -7,8 +7,6 @@ let catMoveFixer = [catPosition]
 const candies = ['/static/asset/cake.png', '/static/asset/cookie.png', '/static/asset/cotton-candy.png', '/static/asset/ice-cream.png', '/static/asset/lollipop.png'];
 const baddies = ['/static/asset/angry-cat.png', '/static/asset/bag.png', '/static/asset/doom.png', '/static/asset/poke.png', '/static/asset/poo.png', '/static/asset/predator.png', '/static/asset/blackhole.png', '/static/asset/water.png']
 const lifeAdding = ['/static/asset/add-life.png']
-let mySound;
-mySound = new sound()
 
 let startButton = document.getElementById('start')
 document.getElementById('banner').style.display = "none";
@@ -55,13 +53,13 @@ function init() {
             catMoveFixer.push(catPosition)
         }
     })
+    setInterval(gameOver, 200)
     setInterval(makeAssumable, 1000, baddies, classForPosition, goodbad[1]);
     setInterval(makeAssumable,1500, candies, classForPosition, goodbad[0]);
     setInterval(makeAssumable, 10000, lifeAdding, classForPosition, goodbad[2])
     setInterval(takeBaddies,200)
     setInterval(takeCandy, 200)
     setInterval(takeLife, 200)
-    setInterval(gameOver, 200)
     setInterval(() => {
         point += 5
     },5000)

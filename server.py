@@ -6,11 +6,12 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    player_name = ""
     if request.method == 'POST':
         player_name = request.form.get('player_name')
+        print(player_name)
         data_manager.write_name_in_scores(player_name)
-    return render_template('index.html', player_name=player_name)
+    return render_template('index.html')
+
 
 @app.route('/api/highscore')
 def high_score():
