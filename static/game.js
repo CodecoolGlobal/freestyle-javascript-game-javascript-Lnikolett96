@@ -2,7 +2,7 @@ let catPosition = 4;
 const classForPosition = ['pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'pos6', 'pos7', 'pos8', 'pos9'];
 let point = 0;
 let goodbad = ['candy', 'baddie']
-let catMoveFixer = []
+let catMoveFixer = [catPosition]
 
 let startButton = document.getElementById('start')
 document.getElementById('banner').style.display = "none";
@@ -52,7 +52,7 @@ function init() {
             catMoveFixer.push(catPosition)
         }
     })
-    setInterval(makeAssumable, 500, baddies, classForPosition, goodbad[1]);setInterval(makeAssumable,2000, candies, classForPosition, goodbad[0]);setInterval(takeCandy, 1000)
+    setInterval(makeAssumable, 300, baddies, classForPosition, goodbad[1]);setInterval(makeAssumable,2000, candies, classForPosition, goodbad[0]);setInterval(takeCandy, 1000)
 }
 
 function makeAssumable(searchList, position, identity) {
