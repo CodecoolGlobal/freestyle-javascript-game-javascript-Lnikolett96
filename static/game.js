@@ -1,6 +1,8 @@
 let catPosition = 4;
 const classForPosition = ['pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'pos6', 'pos7', 'pos8', 'pos9'];
 let point = 0;
+let goodbad = ['candy', 'baddie']
+let catMoveFixer = []
 
 let startButton = document.getElementById('start')
 document.getElementById('banner').style.display = "none";
@@ -15,49 +17,54 @@ const baddies = ['/static/asset/angry-cat.png', '/static/asset/bag.png', '/stati
 
 function init() {
     window.addEventListener("keydown", (event) => {
-        if (catPosition < 1) {
-
-            catPosition = 1;
-        } else if (catPosition > 8) {
-
-            catPosition = 8;
-        }
         if (event.defaultPrevented) {
             return; // Do nothing if the event was already processed
         }
         console.log(event.key)
         if (event.key === "ArrowDown") {
             let moveCat = document.querySelector("#moveNyan");
+            if (catMoveFixer[catMoveFixer.length - 1] - catMoveFixer[catMoveFixer.length - 2] < 0){
+                catPosition += 1;
+            }
             moveCat.style.animation = "Down" + catPosition;
             moveCat.style.animationFillMode = "forwards";
             moveCat.style.animationDuration = "0.5s";
-
-            catPosition++;
-            console.log(catPosition)
+            if (catPosition >= 8) {
+            catPosition = 8;
+            }else{
+                catPosition++;
+            }
+            catMoveFixer.push(catPosition)
         }
         if (event.key === "ArrowUp") {
             let moveCat = document.querySelector("#moveNyan");
+            if (catMoveFixer[catMoveFixer.length - 1] - catMoveFixer[catMoveFixer.length - 2] > 0){
+                catPosition -= 1;
+            }
             moveCat.style.animation = "Up" + catPosition;
             moveCat.style.animationFillMode = "forwards";
             moveCat.style.animationDuration = "0.5s";
-            catPosition--;
-            console.log(catPosition)
+            if (catPosition <= 1) {
+            catPosition = 1;
+            }else{
+                catPosition--;
+            }
+            catMoveFixer.push(catPosition)
         }
     })
-    setInterval(makeAssumable, 500, baddies);setInterval(makeAssumable,2000, candies);setInterval(takeCandy, 1000)
+    setInterval(makeAssumable, 500, baddies, classForPosition, goodbad[1]);setInterval(makeAssumable,2000, candies, classForPosition, goodbad[0]);setInterval(takeCandy, 1000)
 }
 
-function makeAssumable(searchList) {
-    const classForCandies = ['candies', 'candies2', 'candies3', 'candies4', 'candies5', 'candies6', 'candies7', 'candies8', 'candies9'];
-
+function makeAssumable(searchList, position, identity) {
     let theParent = document.querySelector('#cmove');
     let randomInt = parseInt(Math.floor(Math.random() * 9));
     let randomCandy = parseInt(Math.floor(Math.random() * 5));
 
     let candiesDiv = document.createElement('div');
-    candiesDiv.classList.add(classForCandies[randomInt]);
+    candiesDiv.classList.add(identity)
+    candiesDiv.classList.add(position[randomInt]);
     let candiesElement = document.createElement('img');
-    candiesElement.src = candies[randomCandy];
+    candiesElement.src = searchList[randomCandy];
     candiesElement.style.height = '70px';
 
     candiesDiv.appendChild(candiesElement);
@@ -65,7 +72,7 @@ function makeAssumable(searchList) {
 
     setTimeout(() => {
         theParent.removeChild(candiesDiv);
-    }, 3000)
+    }, 2800)
 }
 
 function takeCandy() {
@@ -76,7 +83,6 @@ function takeCandy() {
     let rectnyan = nyancat.getBoundingClientRect();
     for (let i = 0; i < activCandies.length; i++) {
         let oneCandyRect = activCandies[i].getBoundingClientRect();
-        console.log('rectnyan: ' + rectnyan.top + ' onecandyleft: ' + oneCandyRect.top)
         if (rectnyan.top === oneCandyRect.top && Math.floor(oneCandyRect.right) >= 1200) {
             console.log('belement')
             activCandies[i].remove()
@@ -84,4 +90,3 @@ function takeCandy() {
         }
     }
 }
-init()
