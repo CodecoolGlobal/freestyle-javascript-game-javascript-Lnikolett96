@@ -42,51 +42,51 @@ a {color: #fff; text-decoration: none;}
 }
 
 #horizontal-scroll {
-width: 100%;  
-height: 100%;  
-background: url(background1.jpg);
-background-size: cover;
--webkit-animation: backgroundScroll 25s linear infinite;
-animation: backgroundScroll 25s linear infinite;  
-background-color: #9db9da; 
+    width: 100%;
+    height: 100%;
+    background: url(background1.jpg);
+    background-size: cover;
+    -webkit-animation: backgroundScroll 25s linear infinite;
+    animation: backgroundScroll 25s linear infinite;
+    background-color: #9db9da;
 }
 
 #horizontal-scroll2 {
-width: 100%;  
-height: 100%;  
-background: url(background1.jpg);
-background-size: cover;
--webkit-animation: backgroundScroll 25s linear infinite;
-animation: backgroundScroll 25s linear infinite;  
+    width: 100%;
+    height: 100%;
+    background: url(background1.jpg);
+    background-size: cover;
+    -webkit-animation: backgroundScroll 25s linear infinite;
+    animation: backgroundScroll 25s linear infinite;
 }
 
 #horizontal-scroll3 {
-width: 100%;  
-height: 100%;  
-background: url(background1.jpg);
-background-size: cover; 
--webkit-animation: backgroundScroll 25s linear infinite;
-animation: backgroundScroll 25s linear infinite; 
+    width: 100%;
+    height: 100%;
+    background: url(background1.jpg);
+    background-size: cover;
+    -webkit-animation: backgroundScroll 25s linear infinite;
+    animation: backgroundScroll 25s linear infinite;
 }
 
 @-webkit-keyframes backgroundScroll {
-from {background-position: 0 0;}  
-to {background-position: -12900px 0;}  
+    from {background-position: 0 0;}
+    to {background-position: -12900px 0;}
 }
 @keyframes backgroundScroll {
-from {background-position: 0 0;}  
-to {background-position: -12900px 0;}  
+    from {background-position: 0 0;}
+    to {background-position: -12900px 0;}
 }
 
 @-webkit-keyframes breathe {
-0% {text-shadow: 0px 0px 15px #2588f2}  
-50% {text-shadow: 0px 0px 5px #2588f2} 
-100% {text-shadow: 0px 0px 25px #2588f2}  
+    0% {text-shadow: 0px 0px 15px #2588f2}
+    50% {text-shadow: 0px 0px 5px #2588f2}
+    100% {text-shadow: 0px 0px 25px #2588f2}
 }
 @keyframes breathe {
-0% {text-shadow: 0px 0px 15px #000}  
-50% {text-shadow: 0px 0px 5px #fff} 
-100% {text-shadow: 0px 0px 15px #000}
+    0% {text-shadow: 0px 0px 15px #000}
+    50% {text-shadow: 0px 0px 5px #fff}
+    100% {text-shadow: 0px 0px 15px #000}
 }
 
 
@@ -94,7 +94,7 @@ to {background-position: -12900px 0;}
   position: absolute;
   left:0;
   top: 240px;
-  animation: Down4;
+  animation: 0;
   animation-duration: 0.5s;
 }
 @keyframes Down1 {
@@ -166,8 +166,11 @@ to {background-position: -12900px 0;}
   100% {top: 0px; left: 0px}
 }
 
-
-.candies {
+.candy {
+  animation: candy1;
+  animation-duration: 5s;
+}
+.pos1 {
   position: absolute;
   right:0;
   top: 0;
@@ -176,7 +179,7 @@ to {background-position: -12900px 0;}
   animation-timing-function: linear;
 }
 
-.candies2 {
+.pos2 {
   position: absolute;
   right:0;
   top: 80px;
@@ -185,7 +188,7 @@ to {background-position: -12900px 0;}
   animation-timing-function: linear;
 }
 
-.candies3 {
+.pos3 {
   position: absolute;
   right: 0;
   top: 160px;
@@ -194,7 +197,7 @@ to {background-position: -12900px 0;}
   animation-timing-function: linear;
 }
 
-.candies4 {
+.pos4 {
   position: absolute;
   right: 0;
   top: 240px;
@@ -204,7 +207,7 @@ to {background-position: -12900px 0;}
 }
 
 
-.candies5 {
+.pos5 {
   position: absolute;
   right: 0;
   top: 320px;
@@ -213,7 +216,7 @@ to {background-position: -12900px 0;}
   animation-timing-function: linear;
 }
 
-.candies6 {
+.pos6 {
   position: absolute;
   right: 0;
   top: 400px;
@@ -222,7 +225,7 @@ to {background-position: -12900px 0;}
   animation-timing-function: linear;
 }
 
-.candies7 {
+.pos7 {
   position: absolute;
   right: 0;
   top: 480px;
@@ -231,7 +234,7 @@ to {background-position: -12900px 0;}
   animation-timing-function: linear;
 }
 
-.candies8 {
+.pos8 {
   position: absolute;
   right: 0;
   top: 560px;
@@ -240,7 +243,7 @@ to {background-position: -12900px 0;}
   animation-timing-function: linear;
 }
 
-.candies9 {
+.pos9 {
   position: absolute;
   right: 0;
   top: 640px;
@@ -252,4 +255,108 @@ to {background-position: -12900px 0;}
 @keyframes candy1 {
   0% {right: 0;}
   100% {right: 100%}
+}
+
+
+.menu {
+  text-align: center;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid;
+  box-shadow: 10px 15px #000000;
+  border-radius: 25%;
+  width: 40%;
+  position: absolute;
+  top: 10%;
+  left: 28%;
+  height: 70%;
+  padding: 30px;
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+}
+
+input[type="text"] {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+   border-radius: 20px;
+   border: 1px solid #2d9fd9;
+   box-shadow: 5px 10px #000000;
+   color: #a0d18c;
+   width: 300px;
+   height: 35px;
+   padding-left: 5px;
+   text-align: center;
+   line-height: 40px;
+    font-size: 28px;
+}
+
+input[type="text"]:focus {
+   outline: none;
+   border: 1px solid #a0d18c;
+   color: darkblue;
+   line-height: 40px;
+   font-family: Padauk;
+   font-size: 30px;
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 30px;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
 }

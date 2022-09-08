@@ -4,10 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style.css">
     <script src="{{ url_for('static', filename='game.js' ) }}" defer></script>
+    <link rel="stylesheet" href="/static/style.css">
+
     <title>ZsakbaTo(a)stCat</title>
 </head>
+<body>
+<div id="menu" class="menu">
+    <div id="nyan">
+        <img height="200px"  src="/static/asset/menunyan.png">
+        <br>
+        <img width="500px"   src="/static/asset/gametext2.png">
+        <form>
+            <input type="text" required placeholder="Enter your name">
+            <br><br><br>
+            <button id="start" class="glow-on-hover" type="button" >Start</button>
+            <br><br><br>
+            <button type="button" class="glow-on-hover">High score</button>
+        </form>
+    </div>
+</div>
 <div id="horizontal-scroll">
     <div id="horizontal-scroll2">
         <div id="horizontal-scroll3">
