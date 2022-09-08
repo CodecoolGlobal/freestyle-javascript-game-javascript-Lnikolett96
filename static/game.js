@@ -1,6 +1,5 @@
 let catPosition = 4;
 const classForPosition = ['pos1', 'pos2', 'pos3', 'pos4', 'pos5', 'pos6', 'pos7', 'pos8', 'pos9'];
-let catPosition = 1;
 let point = 0;
 
 let startButton = document.getElementById('start')
@@ -83,5 +82,6 @@ function takeCandy() {
             activCandies[i].remove()
             point += 20;
         }
+    }
 }
 init()
