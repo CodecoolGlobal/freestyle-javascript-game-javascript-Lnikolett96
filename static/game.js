@@ -2,17 +2,18 @@ let catPosition = 4;
 const classForPosition = ['pos2', 'pos3', 'pos4', 'pos5', 'pos6', 'pos7', 'pos8', 'pos9'];
 let point = 0;
 let life = 3;
+let playerName = ""
 let goodbad = ['candy', 'baddie', 'add-life']
 let catMoveFixer = [catPosition]
 const candies = ['/static/asset/cake.png', '/static/asset/cookie.png', '/static/asset/cotton-candy.png', '/static/asset/ice-cream.png', '/static/asset/lollipop.png'];
 const baddies = ['/static/asset/angry-cat.png', '/static/asset/bag.png', '/static/asset/doom.png', '/static/asset/poke.png', '/static/asset/poo.png', '/static/asset/predator.png', '/static/asset/blackhole.png', '/static/asset/water.png']
 const lifeAdding = ['/static/asset/add-life.png']
-let mySound;
-mySound = new sound()
 
 let startButton = document.getElementById('start')
 document.getElementById('banner').style.display = "none";
 startButton.addEventListener('click', function (){
+        let playerNameinput = document.querySelector('#player_name')
+        playerName = playerNameinput.value;
         document.getElementById('banner').style.display = "";
         document.getElementById('menu').style.display = "none";
         init()
@@ -98,7 +99,8 @@ function takeCandy() {
         if (rectnyan.x < oneCandyRect.x + oneCandyRect.width &&
             rectnyan.x + rectnyan.width > oneCandyRect.x &&
             rectnyan.y < oneCandyRect.y + oneCandyRect.height &&
-            rectnyan.y + rectnyan.height > oneCandyRect.y) {
+            rectnyan.y + rectnyan.height > oneCandyRect.y + 30) {
+            console.log('belement')
             activCandies[i].remove()
             point += 20;
         }
@@ -114,7 +116,8 @@ function  takeBaddies() {
         if (rectnyan.x < oneBaddieRect.x + oneBaddieRect.width &&
             rectnyan.x + rectnyan.width > oneBaddieRect.x &&
             rectnyan.y < oneBaddieRect.y + oneBaddieRect.height &&
-            rectnyan.y + rectnyan.height > oneBaddieRect.y) {
+            rectnyan.y + rectnyan.height > oneBaddieRect.y + 30) {
+            console.log('belement')
             activBaddies[i].remove()
             life -= 1;
         }
@@ -148,7 +151,7 @@ function gameOver() {
         nyancat.remove();
         let gameOverDiv = document.querySelector('#gameover')
         gameOverDiv.classList.remove('hidden2')
-        let score = document.querySelector('#score')
-        score.innerHTML = point;
+        let playerData = document.querySelector("#playerData");
+        playerData.innerHTML = playerName + " : " + point;
     }
 }
