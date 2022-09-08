@@ -90,6 +90,7 @@ function init() {
     setInterval(() => {
         point += 5
     },5000)
+    setInterval(lifeDisplay, 60)
 }
 
 function makeAssumable(searchList, position, identity) {
@@ -147,6 +148,13 @@ function  takeBaddies() {
         }
     }
 }
+
+function lifeDisplay(){
+    let lifecount = document.querySelector('#life')
+    lifecount.innerHTML = life + 'X'
+}
+
+
 function takeLife() {
     let activBaddies = document.getElementsByClassName('add-life');
     let nyancat = document.querySelector('#moveNyan');
@@ -159,7 +167,7 @@ function takeLife() {
             rectnyan.y + rectnyan.height > oneBaddieRect.y) {
             activBaddies[i].remove()
             if (life === 3){
-
+                life = 3
             }else{
                 life += 1;
             }

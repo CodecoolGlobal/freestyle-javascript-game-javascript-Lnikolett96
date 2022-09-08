@@ -35,6 +35,27 @@ h3:hover {
 
 a {color: #fff; text-decoration: none;}
 
+#lifediv {
+    position: ;
+    top: 0;
+    left: 0;
+
+}
+#life {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    font-size: 40px;
+    font-weight: 800;
+    color: white;
+}
+
+#hearth {
+    position: absolute;
+    top: 20px;
+    left: 70px;
+
+}
 #banner {
   padding: 12% 0 0;
   margin: 0 auto;
