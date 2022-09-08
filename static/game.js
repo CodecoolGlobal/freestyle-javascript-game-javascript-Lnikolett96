@@ -75,8 +75,9 @@ function takeCandy() {
     let rectnyan = nyancat.getBoundingClientRect();
     for (let i = 0; i < activCandies.length; i++) {
         let oneCandyRect = activCandies[i].getBoundingClientRect();
-        if ((rectnyan.top - oneCandyRect.top) < 1 && (rectnyan.left - oneCandyRect.left) < 1)
-            activCandies[i].remove()
+        if ((rectnyan.top - oneCandyRect.top) < 1 && (rectnyan.left - oneCandyRect.left) < 1){
+            activCandies[i].remove();
             point += 20;
+            }
         }
 }
