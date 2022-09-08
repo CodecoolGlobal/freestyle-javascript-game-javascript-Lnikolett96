@@ -179,7 +179,7 @@ function takeLife() {
             rectnyan.y + rectnyan.height > oneBaddieRect.y) {
             activBaddies[i].remove()
             if (life === 3){
-                life = 3
+
             }else{
                 life += 1;
             }
@@ -199,6 +199,14 @@ function gameOver() {
         clearInterval(lifeInterval)
         clearInterval(gameOverInterval)
         sendScoreToDb(playerName, point)
+        let nyancat = document.querySelector('#moveNyan');
+        nyancat.remove();
+        let gameOverDiv = document.querySelector('#gameover')
+        gameOverDiv.classList.remove('hidden2')
+        let playerData = document.querySelector("#playerName");
+        playerData.innerHTML = playerName;
+        let playeyHighscore = document.querySelector('#score');
+        playeyHighscore.innerHTML = point;
     }
 }
 
