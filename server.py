@@ -14,7 +14,18 @@ def index():
 
 @app.route('/api/highscore')
 def high_score():
-    return render_template('Highscores.html')
+    # highscores = [{"name": "KA", "score": 20}, {"name": "MU", "score": 40}]
+    highscores = data_manager.get_data_from_sql()
+    return render_template('Highscores.html', highscores=highscores)
+
+
+@app.route('/api/updatescores', methods=['POST'])
+def update_score():
+    if request.method == 'POST':
+        player_name = request.form.get('name')
+        score = request.form.get('score')
+        data_manager.write_data_in_scores(player_name, score)
+        return "OK"
 
 
 if __name__ == '__main__':

@@ -5,7 +5,10 @@ from psycopg2 import sql
 @database_common.connection_handler
 def get_data_from_sql(cursor):
     query = """
-            SELECT * FROM scores 
+            SELECT *
+            FROM scores
+            ORDER BY scores DESC
+            LIMIT 5
             """
     cursor.execute(query)
     return cursor.fetchall()

@@ -2,9 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--    <script src="{{ url_for('static', filename='game.js' ) }}" defer></script>-->
+    <link rel="stylesheet" href="/static/style.css">
+
+    <title>ZsakbaTo(a)stCat</title>
 </head>
 <body>
-    <h3>Sorry not implemented yet!</h3>
+<!--<div id="menu" class="menu">-->
+<!--    <audio src="/static/music.mp3" autoplay loop></audio>-->
+<!--    <div id="nyan">-->
+<!--        <img height="200px" src="/static/asset/menunyan.png">-->
+<!--        <br>-->
+<!--        <img width="500px"  src="/static/asset/gametext2.png">-->
+<!--        <form id="user-name">-->
+<!--            <input type="text" id="player_name" name="player_name" required placeholder="Enter your name">-->
+<!--            <br><br><br>-->
+<!--            <button id="start" class="glow-on-hover" type="button">Start</button>-->
+<!--            <br><br><br>-->
+<!--            <a href="{{url_for('high_score')}}"><button type="button" class="glow-on-hover">High score</button></a>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+<div id="gameover">
+    <div class="menu">
+        <h1>High Scores</h1>
+        <!--        <h3>Your Scores:</h3>-->
+        <h3 id="playerData"></h3>
+        <table style="width: 80%; font-weight: 800;">
+            {% for item in highscores %}
+            <tr>
+                <td style="color: #9C1A1C">
+                    {{ item.name }}
+                </td>
+                <td>
+                    {{ item.score }}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <form method="post" id="name-score" action="{{url_for('index')}}">
+            <button id="main-menu" name="main-menu" class="glow-on-hover">Main menu</button>
+        </form>
+        <!--        <img src="/static/asset/sack.gif">-->
+    </div>
+</div>
+<div id="horizontal-scroll">
+    <div id="horizontal-scroll2">
+        <div id="horizontal-scroll3">
+            <!--            <div id="score">-->
+            <!--                <h3 style="color: #00ffd5" align="center">Your score: 0 </h3>-->
+            <!--            </div>-->
+            <div id="banner">
+                <div id="cmove" style="display: block;" class="animated infinite pulse">
+                    <!--                    <div id="lifediv">-->
+                    <!--                        <span id="life" ></span>-->
+                    <!--                        <img id="heart" src="/static/heart.png" alt="">-->
+                    <!--                    </div>-->
+                    <div id="moveNyan">
+                        <img height="80px" id="nyanCharacter" src="/static/asset/nyan-cat-poptart-cat.gif">
+                    </div>
+                </div>
+                <h3><a href="#"></a></h3>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

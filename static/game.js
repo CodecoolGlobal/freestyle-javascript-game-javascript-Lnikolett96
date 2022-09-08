@@ -2,6 +2,8 @@ let catPosition = 4;
 const classForPosition = ['pos2', 'pos3', 'pos4', 'pos5', 'pos6', 'pos7', 'pos8', 'pos9'];
 let point = 0;
 let life = 3;
+let lifeInterval = -1
+let gameOverInterval = -1
 let playerName = ""
 let goodbad = ['candy', 'baddie', 'add-life']
 let catMoveFixer = [catPosition]
@@ -35,7 +37,11 @@ userNameForm.addEventListener('submit', (event) => {
 
 startButton.addEventListener('click', function (){
         let playerNameinput = document.querySelector('#player_name')
-        playerName = playerNameinput.value;
+        let newName = playerNameinput.value.trim();
+        if (newName === ""){
+            return;
+        }
+        playerName = newName;
         document.getElementById('banner').style.display = "";
         document.getElementById('score').style.display = "";
         document.getElementById('menu').style.display = "none";
@@ -86,9 +92,10 @@ function init() {
     setInterval(takeBaddies,200)
     setInterval(takeCandy, 200)
     setInterval(takeLife, 200)
-    setInterval(gameOver, 200)
-    setInterval(() => {
+    gameOverInterval = setInterval(gameOver, 200)
+    lifeInterval = setInterval(() => {
         point += 5
+        updateScoreDisplay(point)
     },5000)
     setInterval(lifeDisplay, 60)
 }
@@ -128,8 +135,13 @@ function takeCandy() {
             console.log('belement')
             activCandies[i].remove()
             point += 20;
+            updateScoreDisplay(point)
         }
     }
+}
+
+function updateScoreDisplay(point){
+    document.querySelector("#score>h3").innerHTML = "Your score: " + point
 }
 
 function  takeBaddies() {
@@ -184,8 +196,22 @@ function gameOver() {
         let playerData = document.querySelector("#playerData");
         playerData.innerHTML = playerName + " : " + point;
         document.getElementById('score').style.display = "none";
-
+        clearInterval(lifeInterval)
+        clearInterval(gameOverInterval)
+        sendScoreToDb(playerName, point)
     }
 }
 
         //fetch(`/')
+
+function sendScoreToDb(name, score){
+    let data = new FormData();
+  data.append("name", name);
+  data.append("score", score);
+
+  // INIT FETCH POST
+  fetch('/api/updatescores', {
+    method: "POST",
+    body: data
+  })
+}

@@ -16,7 +16,7 @@ h1 {
   -webkit-text-fill-color: transparent; */
 }
 
-h3 {
+h3, td {
   margin:0; 
   padding: 0; 
   text-align: center; 
