@@ -7,13 +7,32 @@ let catMoveFixer = [catPosition]
 const candies = ['/static/asset/cake.png', '/static/asset/cookie.png', '/static/asset/cotton-candy.png', '/static/asset/ice-cream.png', '/static/asset/lollipop.png'];
 const baddies = ['/static/asset/angry-cat.png', '/static/asset/bag.png', '/static/asset/doom.png', '/static/asset/poke.png', '/static/asset/poo.png', '/static/asset/predator.png', '/static/asset/blackhole.png', '/static/asset/water.png']
 const lifeAdding = ['/static/asset/add-life.png']
-
+let game = init()
 let startButton = document.getElementById('start')
+let gameOverHtml = document.getElementById('gameover')
+let userNameForm = document.getElementById('user-name')
+userNameForm.addEventListener('submit', (event) => {
+    event.preventDefault()
+    let userName = userNameForm.elements['player_name']
+    console.log(userName.value)
+    fetch('/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            player_name: userName.value
+        })
+    })
+})
+
 document.getElementById('banner').style.display = "none";
+gameOverHtml.style.display = "none";
+
 startButton.addEventListener('click', function (){
         document.getElementById('banner').style.display = "";
         document.getElementById('menu').style.display = "none";
-        init()
+        game
 })
 
 function init() {
@@ -120,14 +139,9 @@ function  takeBaddies() {
     }
 }
 
-function gameOver() {
+function gameOver(name, score) {
     if (life === 0) {
-        let gameOver = true;
-        let nyancat = document.querySelector('#moveNyan');
-        nyancat.remove();
-        let gameOverDiv = document.querySelector('#gameover')
-        gameOverDiv.classList.remove('hidden2')
-        let score = document.querySelector('#score')
-        score.innerHTML = point;
     }
 }
+
+        fetch(`/api/highscore?name=${name}&score=${score}`)

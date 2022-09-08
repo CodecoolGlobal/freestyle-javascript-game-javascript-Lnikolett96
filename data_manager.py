@@ -15,4 +15,4 @@ def write_name_in_scores(cursor, name):
     cursor.execute("""
     INSERT INTO scores (username)
     VALUES (%(n)s)""",
-                   {'n':name})
+                   {'n': name})

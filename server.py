@@ -8,8 +8,7 @@ app = Flask(__name__)
 def index():
     player_name = ""
     if request.method == 'POST':
-        player_name = request.form.get('player_name')
-        data_manager.write_name_in_scores(player_name)
+        player_name = request.json.get('player_name')
     return render_template('index.html', player_name=player_name)
 
 
