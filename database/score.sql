@@ -6,3 +6,6 @@ CREATE TABLE scores (
 
     );
 
+
+ALTER TABLE scores
+    ADD CONSTRAINT pk_comments_id PRIMARY KEY (id);

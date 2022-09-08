@@ -4,10 +4,13 @@ import data_manager
 app = Flask(__name__)
 
 
-@app.route('/')
-def hello_world():
-
-    return render_template('index.html')
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    player_name = ""
+    if request.method == 'POST':
+        player_name = request.form.get('player_name')
+        data_manager.write_name_in_scores(player_name)
+    return render_template('index.html', player_name=player_name)
 
 @app.route('/api/highscore')
 def high_score():
@@ -21,6 +24,6 @@ def high_score():
 
 if __name__ == '__main__':
     app.run(
-        port=5500,
+        port=5000,
         debug=True
     )
