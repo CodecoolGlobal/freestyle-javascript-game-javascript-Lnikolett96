@@ -1,6 +1,7 @@
 let catPosition = 4;
 const classForPosition = ['pos2', 'pos3', 'pos4', 'pos5', 'pos6', 'pos7', 'pos8', 'pos9'];
 let point = 0;
+let life = 3;
 let goodbad = ['candy', 'baddie', 'add-life']
 let catMoveFixer = [catPosition]
 const candies = ['/static/asset/cake.png', '/static/asset/cookie.png', '/static/asset/cotton-candy.png', '/static/asset/ice-cream.png', '/static/asset/lollipop.png'];
@@ -52,10 +53,15 @@ function init() {
             catMoveFixer.push(catPosition)
         }
     })
-    setInterval(makeAssumable, 300, baddies, classForPosition, goodbad[1]);
-    setInterval(makeAssumable,2000, candies, classForPosition, goodbad[0]);
+    setInterval(makeAssumable, 1000, baddies, classForPosition, goodbad[1]);
+    setInterval(makeAssumable,1500, candies, classForPosition, goodbad[0]);
     setInterval(makeAssumable, 10000, lifeAdding, classForPosition, goodbad[2])
-    setInterval(takeCandy, 1000);
+    setInterval(takeBaddies,200)
+    setInterval(takeCandy, 200)
+    setInterval(gameOver, 200)
+    setInterval(() => {
+        point += 5
+    },5000)
 }
 
 function makeAssumable(searchList, position, identity) {
@@ -64,7 +70,6 @@ function makeAssumable(searchList, position, identity) {
     let randomCandy = parseInt(Math.floor(Math.random() * searchList.length));
 
     let candiesDiv = document.createElement('div');
-
     candiesDiv.classList.add(identity)
     candiesDiv.classList.add(position[randomInt]);
     let candiesElement = document.createElement('img');
@@ -95,5 +100,34 @@ function takeCandy() {
             activCandies[i].remove()
             point += 20;
         }
+    }
+}
+
+function  takeBaddies() {
+    let activBaddies = document.getElementsByClassName('baddie');
+    let nyancat = document.querySelector('#moveNyan');
+    let rectnyan = nyancat.getBoundingClientRect();
+    for (let i = 0; i < activBaddies.length; i++) {
+        let oneBaddieRect = activBaddies[i].getBoundingClientRect();
+        if (rectnyan.x < oneBaddieRect.x + oneBaddieRect.width &&
+            rectnyan.x + rectnyan.width > oneBaddieRect.x &&
+            rectnyan.y < oneBaddieRect.y + oneBaddieRect.height &&
+            rectnyan.y + rectnyan.height > oneBaddieRect.y) {
+            console.log('belement')
+            activBaddies[i].remove()
+            life -= 1;
+        }
+    }
+}
+
+function gameOver() {
+    if (life === 0) {
+        let gameOver = true;
+        let nyancat = document.querySelector('#moveNyan');
+        nyancat.remove();
+        let gameOverDiv = document.querySelector('#gameover')
+        gameOverDiv.classList.remove('hidden2')
+        let score = document.querySelector('#score')
+        score.innerHTML = point;
     }
 }
