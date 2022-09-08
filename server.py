@@ -4,8 +4,11 @@ import data_manager
 app = Flask(__name__)
 
 
-@app.route('/')
-def hello_world():
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        player_name = request.form.get('player_name')
+        data_manager.write_name_in_scores(player_name)
     return render_template('index.html')
 
 
