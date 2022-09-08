@@ -7,6 +7,8 @@ let catMoveFixer = [catPosition]
 const candies = ['/static/asset/cake.png', '/static/asset/cookie.png', '/static/asset/cotton-candy.png', '/static/asset/ice-cream.png', '/static/asset/lollipop.png'];
 const baddies = ['/static/asset/angry-cat.png', '/static/asset/bag.png', '/static/asset/doom.png', '/static/asset/poke.png', '/static/asset/poo.png', '/static/asset/predator.png', '/static/asset/blackhole.png', '/static/asset/water.png']
 const lifeAdding = ['/static/asset/add-life.png']
+let mySound;
+mySound = new sound()
 
 let startButton = document.getElementById('start')
 document.getElementById('banner').style.display = "none";
@@ -58,6 +60,7 @@ function init() {
     setInterval(makeAssumable, 10000, lifeAdding, classForPosition, goodbad[2])
     setInterval(takeBaddies,200)
     setInterval(takeCandy, 200)
+    setInterval(takeLife, 200)
     setInterval(gameOver, 200)
     setInterval(() => {
         point += 5
@@ -96,7 +99,6 @@ function takeCandy() {
             rectnyan.x + rectnyan.width > oneCandyRect.x &&
             rectnyan.y < oneCandyRect.y + oneCandyRect.height &&
             rectnyan.y + rectnyan.height > oneCandyRect.y) {
-            console.log('belement')
             activCandies[i].remove()
             point += 20;
         }
@@ -113,9 +115,28 @@ function  takeBaddies() {
             rectnyan.x + rectnyan.width > oneBaddieRect.x &&
             rectnyan.y < oneBaddieRect.y + oneBaddieRect.height &&
             rectnyan.y + rectnyan.height > oneBaddieRect.y) {
-            console.log('belement')
             activBaddies[i].remove()
             life -= 1;
+        }
+    }
+}
+function takeLife() {
+    let activBaddies = document.getElementsByClassName('add-life');
+    let nyancat = document.querySelector('#moveNyan');
+    let rectnyan = nyancat.getBoundingClientRect();
+    for (let i = 0; i < activBaddies.length; i++) {
+        let oneBaddieRect = activBaddies[i].getBoundingClientRect();
+        if (rectnyan.x < oneBaddieRect.x + oneBaddieRect.width &&
+            rectnyan.x + rectnyan.width > oneBaddieRect.x &&
+            rectnyan.y < oneBaddieRect.y + oneBaddieRect.height &&
+            rectnyan.y + rectnyan.height > oneBaddieRect.y) {
+            activBaddies[i].remove()
+            if (life === 3){
+
+            }else{
+                life += 1;
+            }
+
         }
     }
 }
