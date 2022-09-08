@@ -72,7 +72,7 @@ function makeAssumable(searchList, position, identity) {
 
     setTimeout(() => {
         theParent.removeChild(candiesDiv);
-    }, 2800)
+    }, 3000)
 }
 
 function takeCandy() {
@@ -83,7 +83,10 @@ function takeCandy() {
     let rectnyan = nyancat.getBoundingClientRect();
     for (let i = 0; i < activCandies.length; i++) {
         let oneCandyRect = activCandies[i].getBoundingClientRect();
-        if (rectnyan.top === oneCandyRect.top && Math.floor(oneCandyRect.right) >= 1200) {
+        if (rectnyan.x < oneCandyRect.x + oneCandyRect.width &&
+            rectnyan.x + rectnyan.width > oneCandyRect.x &&
+            rectnyan.y < oneCandyRect.y + oneCandyRect.height &&
+            rectnyan.y + rectnyan.height > oneCandyRect.y) {
             console.log('belement')
             activCandies[i].remove()
             point += 20;
