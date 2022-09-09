@@ -7,7 +7,7 @@ def get_data_from_sql(cursor):
     query = """
             SELECT *
             FROM scores
-            ORDER BY scores DESC
+            ORDER BY score DESC
             LIMIT 5
             """
     cursor.execute(query)
