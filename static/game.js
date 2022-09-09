@@ -86,7 +86,7 @@ function init() {
             catMoveFixer.push(catPosition)
         }
     })
-    setInterval(makeAssumable, 1000, baddies, classForPosition, goodbad[1]);
+    setInterval(makeAssumable, 300, baddies, classForPosition, goodbad[1]);
     setInterval(makeAssumable,1500, candies, classForPosition, goodbad[0]);
     setInterval(makeAssumable, 10000, lifeAdding, classForPosition, goodbad[2])
     setInterval(takeBaddies,200)
